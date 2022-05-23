@@ -1,0 +1,44 @@
+.container{
+    width: 18%;
+    position: absolute;
+    top:120px;
+    right: 10px;
+    margin: 0 0 auto 80%;
+}
+.out1{
+    border: 1px solid black;
+}
+.out2{
+
+    margin-top: 30px;
+    border: 1px solid black;
+}
+.inner1{
+    background-color: #0ffeff;
+    text-align: left;
+    height: 50px;
+    vertical-align: middle;
+    display: flex;
+}
+.inner1 img{
+    margin: 5px 0;
+}
+/*.inner2{*/
+/*    text-align: center;*/
+/*}*/
+
+.inner2{
+    line-height: 50px;
+    padding-left: 10px;
+}
+
+#rightUL ul{
+    list-style: none;
+}
+#rightUL ul li{
+    margin: 20px;
+}
+#rightUL a{
+    text-decoration: none;
+    color: black;
+}

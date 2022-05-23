@@ -1,0 +1,66 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+a{
+    text-decoration: none;
+}
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:active {
+    color: gray;
+}
+#container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://trustcdn.baidu.com/comt/1586832112_da1b5393a7b2474a3a5700b30e6f410d.jpeg?x-bce-process=image/resize,m_lfit,w_203");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sonCont{
+    background-color: white;
+    margin:auto;
+    display: block;
+    width: 40%;
+    min-width: 388px;
+}
+.divm{
+    margin: 10px 0px;
+}
+.divLeft {
+    width: 30%;
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+
+}
+.divRight{
+    margin-left: 20px;
+    margin-right: 0px;
+    width: 60%;
+    box-sizing:border-box;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right:0.5em;
+}
+#btn1{
+    width: inherit;
+    vertical-align: middle;
+    margin-left: 10px;
+    border: none;
+    background: white
+}
+.btnW{
+    margin: 0 10px;
+}

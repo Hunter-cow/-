@@ -1,0 +1,24 @@
+
+html body{
+    min-width: 1200px;
+}
+#container3{
+    width: 80%;
+    margin-left: 0px;
+}
+
+.searchTable,.searchTable tr,.searchTable td{
+    border: none;
+}
+.btnAdd{
+    position: absolute;
+    right: 260px;
+}
+.stuMsg{
+    margin-top: 80px;
+    width: 100%;
+}
+.stuMsg ,.stuMsg td, .stuMsg tr ,.stuMsg th{
+    border: 1px solid black;
+    border-spacing: 0px;
+}

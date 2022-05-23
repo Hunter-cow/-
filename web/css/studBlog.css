@@ -1,0 +1,23 @@
+/*.stuBlog{*/
+/*    width: 80%;*/
+/*    padding-left: 0px;*/
+/*    text-align: right;*/
+/*}*/
+
+.studNoteTable{
+    width: 80%;
+    padding-left: 0px;
+}
+.studNoteTable,.studNoteTable td, .studNoteTable tr{
+    border: 1px black solid;
+    border-spacing: 0;
+}
+
+.studBlog1{
+    width: 80%;
+    padding-left: 0px;
+}
+.studBlog1,.studBlog1 td,.studBlog1 tr{
+    border: 1px black solid;
+    border-spacing: 0;
+}

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xhu.dao.adminDao">
+    <select id="selectLimit" parameterType="java.lang.Integer" resultType="com.xhu.pojo.Note">
+        SELECT id,`Title`,`Content`,`Createdate` FROM t_note LIMIT #{pageNo},5;
+    </select>
+    <select id="selectByNote" parameterType="java.lang.String" resultType="com.xhu.pojo.Note" >
+        select * from t_note where `Title` like concat('%',#{note},'%');
+    </select>
+
+    <select id="selectById" resultType="com.xhu.pojo.Note">
+        select * from t_note where `id`=#{id}
+    </select>
+
+    <insert id="addNote" parameterType="com.xhu.pojo.Note">
+        insert into t_note values(null,#{Title},#{Content},NOW());
+    </insert>
+
+    <delete id="deleteNote" parameterType="java.lang.Integer">
+        delete from t_note where id = #{id};
+    </delete>
+    <update id="updateNote" parameterType="com.xhu.pojo.Note">
+        update t_note set `Title`=#{Title},`Content`=#{Content},`Createdate`=NOW() where `id`=#{id};
+    </update>
+
+
+    <select id="selectStudLimit" parameterType="java.lang.Integer" resultType="com.xhu.pojo.Student">
+        select * from t_student limit #{pageNo},5;
+    </select>
+
+    <select id="selectStudBy" parameterType="com.xhu.pojo.Student" resultType="com.xhu.pojo.Student">
+        select * from t_student
+        <where>
+            <if test="Name != null and Name !=''">`Name`like concat('%',#{name},'%')</if>
+            <if test="sex != null and sex !=''">and `sex` = #{sex}</if>
+            <if test="gid != null and gid != -1">and `gid` = #{gid}</if>
+        </where>
+    </select>
+
+
+    <insert id="insertStud" parameterType="com.xhu.pojo.Student">
+        insert into t_student values(null,#{Name},#{username},'',#{Code},#{sex},#{Age},#{gid},'','',#{chuqing},#{Score})
+
+
+    </insert>
+
+    <update id="updateStud" parameterType="com.xhu.pojo.Student">
+        update t_student
+            <set>
+            <if test="username != null and username != ''">`username`=#{username},</if>
+            <if test="Code != null and Code != ''">`Code`=#{code},</if>
+            <if test="Name != null and Name != ''"> `Name` = #{name},</if>
+            <if test="Age != null and Age != ''"> `Age`=#{age},</if>
+            <if test="sex != null and sex != ''">`sex`=#{sex},</if>
+            <if test="gid != null and gid !=''"> `gid`=#{gid},</if>
+            <if test="Score != null and Score!=''"> `Score`=#{score},</if>
+            <if test="chuqing != null and chuqing !=''"> `chuqing`=#{chuqing},</if>
+            <if test="Jineng !=null and Jineng !=''">`Jineng`=#{jineng},</if>
+            <if test="zhiyuan != null and zhiyuan !=''"> `zhiyuan`=#{zhiyuan}</if>
+            </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteStud" parameterType="java.lang.Integer">
+        delete from t_student where `id`=#{id}
+    </delete>
+
+    <select id="selectOneStud" parameterType="java.lang.Integer" resultType="com.xhu.pojo.Student">
+        select * from t_student where `id`=#{id}
+    </select>
+
+    <select id="selectAllBlog" parameterType="java.lang.Integer" resultType="com.xhu.pojo.Blog">
+        SELECT * FROM t_blog LIMIT #{pageNo},5
+    </select>
+
+    <delete id="deleteBlog" parameterType="java.lang.Integer">
+        delete from t_blog where `id` = #{id}
+    </delete>
+
+    <insert id="addBlog" parameterType="com.xhu.pojo.Blog">
+        insert into t_blog values(null,#{title},#{content},now(),#{sid})
+    </insert>
+    <select id="selectBlogBy" resultType="com.xhu.pojo.Blog" parameterType="java.lang.Integer">
+        select * from t_blog where `sid` = #{sid} limit #{pageNo},5
+    </select>
+    <select id="selectBlog" parameterType="java.lang.Integer" resultType="com.xhu.pojo.Blog">
+        select * from t_blog where `id`=#{id}
+    </select>
+    <select id="selectBlogByName" resultType="com.xhu.pojo.Blog">
+        select * from t_blog where `Title` like concat('%',#{title},'%') and `sid`=#{sid} limit #{pageNo},5
+    </select>
+    <update id="updateBlog" parameterType="com.xhu.pojo.Blog">
+        update t_blog set `Title` = #{title} ,`Content`=#{content} ,`Createdate`=now() where `id`=#{id}
+    </update>
+
+    <select id="selectAllLink" parameterType="java.lang.Integer" resultType="com.xhu.pojo.Link">
+        select * from t_link limit #{pageNo},5
+    </select>
+
+    <delete id="deleteLink" parameterType="java.lang.Integer">
+        delete from t_link where `id`=#{id}
+    </delete>
+    <insert id="addLink" parameterType="com.xhu.pojo.Link">
+        INSERT INTO t_link VALUES(NULL,#{name},#{link})
+    </insert>
+    <select id="selectLinkBy" parameterType="java.lang.String" resultType="com.xhu.pojo.Link">
+        select * from t_link where `Name` like concat('%',#{linkName},'%')
+    </select>
+</mapper>

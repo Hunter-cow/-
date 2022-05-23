@@ -1,0 +1,31 @@
+table{
+    width: 100%;
+}
+table tr{
+    height: 50px;
+}
+table{
+    border-collapse: collapse;
+
+    margin: 0 auto;
+}
+table, th, td
+{
+    border: 1px solid black;
+}
+td{
+    text-align:center;
+}
+.noteTable,.noteTable th,.noteTable td{
+    border: 0px solid black;
+}
+a{
+    text-decoration: none;
+}
+#container2{
+    width: 80%;
+    margin-left: 0px;
+}
+html body{
+    min-width: 1200px;
+}

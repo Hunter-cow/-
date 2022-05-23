@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xhu.dao.loginDao">
+
+    <insert id="saveUser" parameterType="com.xhu.pojo.User">
+        insert into t_user values(null,#{username},#{Password})
+    </insert>
+    <select id="findUseByNamePass" parameterType="com.xhu.pojo.User" resultType="com.xhu.pojo.User">
+        select * from t_user where username=#{username} and Password=#{Password}
+    </select>
+
+    <insert id="saveStud" parameterType="com.xhu.pojo.Student">
+        INSERT INTO t_student VALUES(NULL,'',#{username},#{Password},'',0,0,0,'','','','');
+    </insert>
+
+    <select id="finStudByNamePass" parameterType="com.xhu.pojo.Student" resultType="com.xhu.pojo.Student">
+        select * from t_student where username=#{username} and Password=#{Password}
+    </select>
+
+
+    <update id="updateUser" parameterType="com.xhu.pojo.User">
+        update t_user set Password=#{Password} where username=#{username}
+    </update>
+
+
+    <update id="updateStudent" parameterType="com.xhu.pojo.Student">
+        update t_student set Password=#{Password} where username=#{username}
+    </update>
+</mapper>

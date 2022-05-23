@@ -1,0 +1,17 @@
+.container1{
+    background-color: aqua;
+    height: 100px;
+    width: 100%;
+}
+
+
+#topUL ul{
+    list-style: none;
+    display: flex;
+    padding: 0;
+    width: 60%;
+}
+#topUL li{
+    text-align: center;
+    margin: 0 auto;
+}
